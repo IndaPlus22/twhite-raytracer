@@ -1,0 +1,1 @@
+C:\Users\timel\indapluswindows\twhite-raytracer\main\target\debug\main.exe: C:\Users\timel\indapluswindows\twhite-raytracer\main\src\main.rs C:\Users\timel\indapluswindows\twhite-raytracer\main\src\ppm_viewer.rs C:\Users\timel\indapluswindows\twhite-raytracer\main\src\vec3.rs
