@@ -10,12 +10,13 @@ fn main() {
     let max = 255;
     print_ppm(nx, ny, max);
 
-    let v = Vec3::vec(1.0, 2.0, 3.0);
-    let u = Vec3::vec(4.0, 5.0, 6.0);
-    let w = v + u;
-    print!("{:?\n}", w);
+    let v = Vec3::vec(2.0, 10.0, 18.0);
+    let u = Vec3::vec(2.0, 5.0, 6.0);
+    let w = v / u;
+    print!("{:?}\n", w);
     let q = w.normalise();
-    print!("{:?}\n", q);
+    let len = q.length();
+    print!("{}\n", len);
 
 
     println!("{} {} {}", w.x, w.y, w.z);

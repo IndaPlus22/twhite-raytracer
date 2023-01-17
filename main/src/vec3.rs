@@ -51,16 +51,16 @@ impl Vec3 {
     }
 
     //returns the dot product of two vectors
-    pub fn dotProduct(a: Vec3, b: Vec3) -> f32 {
-        a.x * b.x + a.y * b.y + a.z * b.z
+    pub fn dotProduct(u: Vec3, v: Vec3) -> f32 {
+        u.x * v.x + u.y * v.y + u.z * v.z
     }
     
     //returns the cross product of two vectors
-    pub fn crossProduct(a: Vec3, b: Vec3) -> Vec3 {
+    pub fn crossProduct(u: Vec3, v: Vec3) -> Vec3 {
         Vec3 {
-            x: a.y * b.z - a.z * b.y,
-            y: a.z * b.x - a.x * b.z,
-            z: a.x * b.y - a.y * b.x,
+            x: u.y * v.z - u.z * v.y,
+            y: u.z * v.x - u.x * v.z,
+            z: u.x * v.y - u.y * v.x,
         }
     }
 }
