@@ -1,3 +1,1 @@
 # twhite-raytracer
-
-tray racer
