@@ -24,7 +24,7 @@ impl Vec3 {
     }
 
     //vector with all coordinates as the same value
-    pub fn vec_all_coordinates_same(all: f32) -> Vec3 {
+    pub fn vec_all(all: f32) -> Vec3 {
         Vec3 {
             x: all,
             y: all,
