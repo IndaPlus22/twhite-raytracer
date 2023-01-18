@@ -1,31 +1,19 @@
 mod ppm_viewer;
-mod vec3; 
+mod ray;
+mod vec3;
+use crate::ray::Ray;
 use crate::vec3::Vec3;
 
-
 fn main() {
-
     let nx = 200;
     let ny = 100;
     let max = 255;
     print_ppm(nx, ny, max);
-
-    let v = Vec3::vec(2.0, 10.0, 18.0);
-    let u = Vec3::vec(2.0, 5.0, 6.0);
-    let w = v / u;
-    print!("{:?}\n", w);
-    let q = w.normalise();
-    let len = q.length();
-    print!("{}\n", len);
-
-
-    println!("{} {} {}", w.x, w.y, w.z);
-    println!("{} {} {}", q.x, q.y, q.z);
 }
 
 fn print_ppm(nx: i32, ny: i32, max: i32) {
     println!("P3\n{} {}\n{}", nx, ny, max);
-    
+
     for i in 0..nx {
         for j in 0..ny {
             let r: f32 = i as f32 / nx as f32;
@@ -37,4 +25,10 @@ fn print_ppm(nx: i32, ny: i32, max: i32) {
             println!("{} {} {}", ir, ig, ib);
         }
     }
+}
+
+fn color(r: Ray) -> Vec3 {
+    let unit_direction = Vec3::normalised_vector(&r.direction());
+    let t: f32 = 0.5 * (unit_direction.y + 1.0);
+    Vec3::vec_all_coordinates_same(1.0) * (1.0 - t) + Vec3::vec(0.5, 0.7, 1.0) * t
 }
